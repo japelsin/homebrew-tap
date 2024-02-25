@@ -5,20 +5,20 @@
 class Pplx < Formula
   desc ""
   homepage "https://github.com/japelsin/pplx"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.0/pplx_Darwin_arm64.tar.gz"
-      sha256 "0cc279e478a09c74152db23eddd73819d43f03fd52f42e2740547bf25d2cc5f2"
+      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Darwin_arm64.tar.gz"
+      sha256 "8099aa914e671a261cde134fa6344a33e069dd8266d8dcf2168875009be36159"
 
       def install
         bin.install "pplx"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.0/pplx_Darwin_x86_64.tar.gz"
-      sha256 "bcb990c5f769ea51162186d5a86dadf9cdb8c5e99720d77ee7031cd5f88ee02d"
+      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Darwin_x86_64.tar.gz"
+      sha256 "45de6a3087d1f96c9a998393f2134b700d63e846c45a3225563fefe6d5cc4748"
 
       def install
         bin.install "pplx"
@@ -27,17 +27,17 @@ class Pplx < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.0/pplx_Linux_x86_64.tar.gz"
-      sha256 "e8d7aa68fa0f8ebc4dd493b1bcffd2dad3746e5dcff9d470cdc4a28db250eefc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Linux_arm64.tar.gz"
+      sha256 "de1259f128c6e4870130909171c6dec8623b64fce93321eed582354ee26870ef"
 
       def install
         bin.install "pplx"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.0/pplx_Linux_arm64.tar.gz"
-      sha256 "5464bc9671a6ce5601d896f82b8b01b16ab21c3a176b948faf748b55ea00d768"
+    if Hardware::CPU.intel?
+      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Linux_x86_64.tar.gz"
+      sha256 "46333a8133dd7305aa293deda47d6fe56836bcc7e8642bc08f099f86e0dc8aee"
 
       def install
         bin.install "pplx"
