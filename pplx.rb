@@ -5,20 +5,20 @@
 class Pplx < Formula
   desc ""
   homepage "https://github.com/japelsin/pplx"
-  version "0.3.1"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Darwin_arm64.tar.gz"
-      sha256 "8099aa914e671a261cde134fa6344a33e069dd8266d8dcf2168875009be36159"
+      url "https://github.com/japelsin/pplx/releases/download/v0.4.0/pplx_Darwin_arm64.tar.gz"
+      sha256 "1cd1e3ed5d9f3538cc7afb08f6a93989bcd48c0df79d51cf55059569d5e60147"
 
       def install
         bin.install "pplx"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Darwin_x86_64.tar.gz"
-      sha256 "45de6a3087d1f96c9a998393f2134b700d63e846c45a3225563fefe6d5cc4748"
+      url "https://github.com/japelsin/pplx/releases/download/v0.4.0/pplx_Darwin_x86_64.tar.gz"
+      sha256 "ffc060433700dec5c3ad948d28bb15f1e14c805c193aa2d7c5dd62a1c47cc961"
 
       def install
         bin.install "pplx"
@@ -28,16 +28,16 @@ class Pplx < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Linux_arm64.tar.gz"
-      sha256 "de1259f128c6e4870130909171c6dec8623b64fce93321eed582354ee26870ef"
+      url "https://github.com/japelsin/pplx/releases/download/v0.4.0/pplx_Linux_arm64.tar.gz"
+      sha256 "e03126ac3a39098c361a55a650d0a9327ce25b38d7e5a0421f263747f233948f"
 
       def install
         bin.install "pplx"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.3.1/pplx_Linux_x86_64.tar.gz"
-      sha256 "46333a8133dd7305aa293deda47d6fe56836bcc7e8642bc08f099f86e0dc8aee"
+      url "https://github.com/japelsin/pplx/releases/download/v0.4.0/pplx_Linux_x86_64.tar.gz"
+      sha256 "d182037d484dcead4dad4df10af1f05548d0800d4da01adb311866c4576cb28f"
 
       def install
         bin.install "pplx"
