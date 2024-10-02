@@ -5,20 +5,20 @@
 class Pplx < Formula
   desc ""
   homepage "https://github.com/japelsin/pplx"
-  version "0.5.0"
+  version "0.6.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/japelsin/pplx/releases/download/v0.5.0/pplx_Darwin_arm64.tar.gz"
-      sha256 "c5fefca58a76333bc9bd0a76c67800eec71c01fa8d626115dd4d93da43fc3a6c"
+    on_intel do
+      url "https://github.com/japelsin/pplx/releases/download/v0.6.0/pplx_Darwin_x86_64.tar.gz"
+      sha256 "2589ff1ad0f35096afbc2a68907e73c7ff7f61bb6a17bee76907a2d857f441f5"
 
       def install
         bin.install "pplx"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.5.0/pplx_Darwin_x86_64.tar.gz"
-      sha256 "741d1af3158daa824df254204f5eee89c3817b11942dff695d8f2ce44fa2eb40"
+    on_arm do
+      url "https://github.com/japelsin/pplx/releases/download/v0.6.0/pplx_Darwin_arm64.tar.gz"
+      sha256 "0c1ebc38dd2d1ff52b565467424497f54aec9abc955fd9b41d08e92021471d19"
 
       def install
         bin.install "pplx"
@@ -27,20 +27,24 @@ class Pplx < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/japelsin/pplx/releases/download/v0.5.0/pplx_Linux_arm64.tar.gz"
-      sha256 "e0372782b7621c1e7732c0598db644db27ae1e1999f6a6ebdac485ea5dad1a29"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/japelsin/pplx/releases/download/v0.6.0/pplx_Linux_x86_64.tar.gz"
+        sha256 "97a5b4b8d0c5b9942a6481a255dee7fd75715a7add26adf6c65be04f8d051d7b"
 
-      def install
-        bin.install "pplx"
+        def install
+          bin.install "pplx"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/japelsin/pplx/releases/download/v0.5.0/pplx_Linux_x86_64.tar.gz"
-      sha256 "bfcd02098e7a96a9b07b970f1a635f4636301b2683e59e8ae8aee97c47f01f0f"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/japelsin/pplx/releases/download/v0.6.0/pplx_Linux_arm64.tar.gz"
+        sha256 "e0158871f78fdf82d0d11e2900f3036fbf8929e438764d2187de075843f5623d"
 
-      def install
-        bin.install "pplx"
+        def install
+          bin.install "pplx"
+        end
       end
     end
   end
